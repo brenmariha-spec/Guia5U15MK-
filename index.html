@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Interactiva · Plan 05/07 · 5. Literatura: características, temas y etapas · 5to. Bachillerato en Mercadotecnia 2027</title>
+  <style>
+    :root {
+      --azul: #1269A8;
+      --amarillo: #F7D615;
+      --verde-gris: #54887D;
+      --azul-claro: #88B5C7;
+      --oliva: #A6B046;
+      --fondo: #F2F5E9;
+      --texto: #1e293b;
+      --blanco: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 16px;
+      line-height: 1.55;
+    }
+    .marco {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: var(--blanco);
+      border: 3px solid var(--amarillo);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(18, 105, 168, 0.14);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, var(--azul) 0%, #0d4f80 100%);
+      color: var(--blanco);
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 4px solid var(--amarillo);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1 1 540px;
+    }
+    .logo-badge {
+      min-width: 72px;
+      height: 68px;
+      background: var(--blanco);
+      color: var(--azul);
+      border-radius: 10px;
+      padding: 6px 10px;
+      border: 2px solid var(--amarillo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-align: center;
+      line-height: 1.15;
+    }
+    .inst-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--amarillo);
+      font-weight: 700;
+    }
+    .header h1 {
+      font-size: 1.28rem;
+      font-weight: 700;
+      margin: 3px 0;
+    }
+    .header p {
+      font-size: 0.9rem;
+      opacity: 0.94;
+    }
+    .btn-fs {
+      background: var(--amarillo);
+      color: #102a43;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .sub-bar {
+      background: #e8f1f7;
+      padding: 10px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      border-bottom: 2px solid var(--azul-claro);
+    }
+    .date-input {
+      border: 1px solid var(--azul);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-family: inherit;
+      font-size: 0.84rem;
+      color: var(--texto);
+      background: var(--blanco);
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      background: #dce8ef;
+      padding: 8px 16px 0 16px;
+      gap: 6px;
+      border-bottom: 3px solid var(--azul);
+    }
+    .tab-btn {
+      background: var(--blanco);
+      color: var(--azul);
+      border: 2px solid var(--azul-claro);
+      border-bottom: none;
+      padding: 10px 18px;
+      border-radius: 10px 10px 0 0;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+    .tab-btn.active {
+      background: var(--azul);
+      color: var(--blanco);
+      border-color: var(--azul);
+    }
+    .tab-panel {
+      display: none;
+      padding: 22px 24px;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+    .section-sub {
+      color: var(--azul);
+      font-size: 1.08rem;
+      margin: 18px 0 10px 0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--amarillo);
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .card {
+      background: var(--blanco);
+      border: 2px solid var(--verde-gris);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      color: var(--verde-gris);
+      margin: 6px 0;
+      font-size: 1.05rem;
+    }
+    .card-ejemplo {
+      background: var(--blanco);
+      border: 2px solid var(--verde-gris);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .card-ejemplo h4, .card-ejercicio h4 {
+      color: var(--azul);
+      margin: 6px 0;
+      font-size: 0.98rem;
+    }
+    .card-ejercicio {
+      background: rgba(136, 181, 199, 0.22);
+      border: 2px solid var(--azul-claro);
+      border-radius: 10px;
+      padding: 14px;
+    }
+    .badge-nivel {
+      display: inline-block;
+      background: var(--oliva);
+      color: var(--blanco);
+      font-weight: 700;
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+    .resp-area {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid var(--verde-gris);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #fcfdf9;
+      resize: vertical;
+    }
+    .footer-note {
+      background: #f8faf5;
+      border-top: 2px solid var(--azul-claro);
+      padding: 12px 24px;
+      font-size: 0.8rem;
+      color: #475569;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="guiaRoot" class="marco">
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-badge">COLEGIO<br/>MONTANO</div>
+        <div>
+          <div class="inst-tag">Colegio Montano · Guía Interactiva · Quinto Bachillerato en Mercadotecnia · Unidad I</div>
+          <h1>Guía Interactiva · Plan 05/07 — 5. Literatura: características, temas y etapas</h1>
+          <p>Literatura: características del lenguaje literario, temas recurrentes y etapas</p>
+        </div>
+      </div>
+      <button class="btn-fs" type="button" onclick="toggleFullScreen()">&#9974; Pantalla Completa</button>
+    </header>
+
+    <div class="sub-bar">
+      <div><strong>Docente:</strong> Brenda Hidalgo</div>
+      <div><strong>Curso:</strong> Comunicación · <strong>Carrera:</strong> Quinto Bachillerato en Mercadotecnia · <strong>Ciclo:</strong> 2027</div>
+      <div><strong>Periodo:</strong> 11 de enero al 5 de marzo · <strong>Fecha editable:</strong> <input class="date-input" type="date" value="2027-02-08" aria-label="Fecha editable" /></div>
+      <div><strong>Plan asociado:</strong> plan_05_tema_05.html</div>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Secciones de la guía interactiva">
+      <button class="tab-btn active" type="button" onclick="openTab(event, 'g-teoria')">Teoría</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'g-ejemplos')">Ejemplos (15)</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'g-ejercicios')">Ejercicios (15)</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'g-reflexion')">Reflexión</button>
+      <button class="tab-btn" type="button" onclick="openTab(event, 'g-evaluacion')">Evaluación</button>
+    </nav>
+
+    <section id="g-teoria" class="tab-panel active">
+      <h3 class="section-sub">Fundamentación Conceptual y Propósito de la Sesión</h3>
+      <div class="cards-grid">
+        
+        <div class="card">
+          <span class="badge-nivel">Fundamento 1</span>
+          <h3>Características de la literatura</h3>
+          <p>Es una forma de comunicación estética y simbólica que trabaja el lenguaje de manera connotativa, plurivalente y creadora, generando mundos de ficción o reinterpretaciones de la realidad con intención artística.</p>
+        </div>
+        <div class="card">
+          <span class="badge-nivel">Fundamento 2</span>
+          <h3>Temas recurrentes de la literatura</h3>
+          <p>A lo largo de la historia literaria reaparecen grandes núcleos temáticos como el amor, la muerte, el destino y la libertad, el poder y la justicia, el viaje/búsqueda de identidad y la condición humana.</p>
+        </div>
+        <div class="card">
+          <span class="badge-nivel">Fundamento 3</span>
+          <h3>Etapas de la historia literaria</h3>
+          <p>Suele estudiarse a través de grandes etapas y movimientos (Antigüedad clásica, Edad Media, Renacimiento/Barroco, Ilustración/Romanticismo, Realismo/Naturalismo, Vanguardias y literatura contemporánea), cada una con estéticas y preocupaciones propias.</p>
+        </div>
+        <div class="card">
+          <span class="badge-nivel">Sesión 5 de 7 · Unidad I</span>
+          <h3>Enfoque de la Clase y Conexión Profesional</h3>
+          <p><strong>Enfoque:</strong> Rasgos distintivos de lo literario, temas recurrentes de la tradición y panorama de etapas literarias.</p>
+          <p><strong>Hábito Montano:</strong> Sensibilidad estética, amplitud cultural y lectura crítica</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="g-ejemplos" class="tab-panel">
+      
+    <h3 class="section-sub">Nivel Básico (5 ejemplos resueltos)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Básico · Ejemplo 1</span>
+              <h4>Lenguaje literario frente a lenguaje cotidiano/informativo</h4>
+              <p><strong>Planteamiento:</strong> Comparar un parte meteorológico o ficha técnica con un pasaje poético o narrativo sobre la lluvia o el tiempo.</p>
+              <p><strong>Desarrollo modelo:</strong> El texto literario prioriza recursos expresivos, imágenes y sugerencia estética.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Básico · Ejemplo 2</span>
+              <h4>Reconocimiento de un tema recurrente</h4>
+              <p><strong>Planteamiento:</strong> Identificar si un fragmento trata sobre la búsqueda de identidad, el poder, el amor o el destino.</p>
+              <p><strong>Desarrollo modelo:</strong> Los temas recurrentes expresan experiencias humanas constantes.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Básico · Ejemplo 3</span>
+              <h4>Ubicación de una etapa literaria</h4>
+              <p><strong>Planteamiento:</strong> Asociar un rasgo general (como el teocentrismo medieval o el humanismo renacentista) con su etapa.</p>
+              <p><strong>Desarrollo modelo:</strong> Cada etapa responde a contextos históricos y culturales particulares.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Básico · Ejemplo 4</span>
+              <h4>Carácter ficcional o simbólico</h4>
+              <p><strong>Planteamiento:</strong> Comprender que una obra literaria no equivale a un reporte periodístico literal.</p>
+              <p><strong>Desarrollo modelo:</strong> La ficción y el símbolo permiten explorar verdades humanas de forma indirecta.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Básico · Ejemplo 5</span>
+              <h4>Lectura atenta de un fragmento</h4>
+              <p><strong>Planteamiento:</strong> Localizar qué sentimiento, conflicto o imagen destaca en un texto breve.</p>
+              <p><strong>Desarrollo modelo:</strong> Observación directa del texto como base del análisis.</p>
+            </div>
+    </div>
+    <h3 class="section-sub">Nivel Intermedio (5 ejemplos resueltos)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Intermedio · Ejemplo 1</span>
+              <h4>Relación entre tema recurrente y época</h4>
+              <p><strong>Planteamiento:</strong> Analizar cómo un mismo tema (por ejemplo, el destino o el poder) se aborda de forma distinta en dos épocas.</p>
+              <p><strong>Desarrollo modelo:</strong> Aunque el tema persista, cambia el enfoque según la mentalidad de cada etapa.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Intermedio · Ejemplo 2</span>
+              <h4>Connotación y sugerencia en literatura</h4>
+              <p><strong>Planteamiento:</strong> Explicar qué sugiere una expresión figurada más allá de su significado literal.</p>
+              <p><strong>Desarrollo modelo:</strong> La plurivalencia invita a diversas lecturas fundamentadas.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Intermedio · Ejemplo 3</span>
+              <h4>Transición entre etapas literarias</h4>
+              <p><strong>Planteamiento:</strong> Identificar señales de cambio cuando una corriente estética cede paso a otra.</p>
+              <p><strong>Desarrollo modelo:</strong> Las etapas se suceden mediante continuidad, reacción y renovación.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Intermedio · Ejemplo 4</span>
+              <h4>Comparación de dos fragmentos breves</h4>
+              <p><strong>Planteamiento:</strong> Contrastar el tono y el tema de dos textos cortos de distintas etapas.</p>
+              <p><strong>Desarrollo modelo:</strong> Se identifican semejanzas temáticas y diferencias estilísticas.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Intermedio · Ejemplo 5</span>
+              <h4>Conexión con la comunicación y mercadotecnia</h4>
+              <p><strong>Planteamiento:</strong> Observar cómo la narrativa y los símbolos literarios ayudan a entender el poder del relato (storytelling).</p>
+              <p><strong>Desarrollo modelo:</strong> Comprender recursos narrativos y simbólicos enriquece la comunicación creativa.</p>
+            </div>
+    </div>
+    <h3 class="section-sub">Nivel Avanzado (5 ejemplos resueltos)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Avanzado · Ejemplo 1</span>
+              <h4>Comentario sobre características de lo literario</h4>
+              <p><strong>Planteamiento:</strong> Explicar por qué un texto dado se reconoce como literario atendiendo a su lenguaje y propósito.</p>
+              <p><strong>Desarrollo modelo:</strong> Se argumenta con rasgos formales y expresivos del pasaje.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Avanzado · Ejemplo 2</span>
+              <h4>Análisis de un tema recurrente en un pasaje</h4>
+              <p><strong>Planteamiento:</strong> Desarrollar cómo se manifiesta un tema recurrente y qué postura sugiere el texto.</p>
+              <p><strong>Desarrollo modelo:</strong> Se respalda la interpretación con elementos presentes en el fragmento.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Avanzado · Ejemplo 3</span>
+              <h4>Esquema evolutivo de etapas</h4>
+              <p><strong>Planteamiento:</strong> Sintetizar las principales etapas literarias destacando un rasgo distintivo de cada una.</p>
+              <p><strong>Desarrollo modelo:</strong> Demuestra visión panorámica y orden cronológico.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Avanzado · Ejemplo 4</span>
+              <h4>Evaluación de lectura interpretativa</h4>
+              <p><strong>Planteamiento:</strong> Justificar por qué dos lectores pueden destacar distintos matices en un mismo poema o relato.</p>
+              <p><strong>Desarrollo modelo:</strong> Se explica la apertura interpretativa del texto literario.</p>
+            </div>
+
+            <div class="card-ejemplo">
+              <span class="badge-nivel">Nivel Avanzado · Ejemplo 5</span>
+              <h4>Síntesis del tema 5</h4>
+              <p><strong>Planteamiento:</strong> Redactar un párrafo que integre características, temas recurrentes y etapas de la literatura.</p>
+              <p><strong>Desarrollo modelo:</strong> Sintetiza los tres componentes de manera coherente.</p>
+            </div>
+    </div>
+    </section>
+
+    <section id="g-ejercicios" class="tab-panel">
+      
+    <h3 class="section-sub">Nivel Básico (5 ejercicios prácticos · Respuesta Autónoma)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Básico · Ejercicio 1</span>
+              <h4>Lenguaje literario frente a lenguaje cotidiano/informativo</h4>
+              <p>Comparar un parte meteorológico o ficha técnica con un pasaje poético o narrativo sobre la lluvia o el tiempo. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_bas_1" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Básico · Ejercicio 2</span>
+              <h4>Reconocimiento de un tema recurrente</h4>
+              <p>Identificar si un fragmento trata sobre la búsqueda de identidad, el poder, el amor o el destino. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_bas_2" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Básico · Ejercicio 3</span>
+              <h4>Ubicación de una etapa literaria</h4>
+              <p>Asociar un rasgo general (como el teocentrismo medieval o el humanismo renacentista) con su etapa. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_bas_3" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Básico · Ejercicio 4</span>
+              <h4>Carácter ficcional o simbólico</h4>
+              <p>Comprender que una obra literaria no equivale a un reporte periodístico literal. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_bas_4" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Básico · Ejercicio 5</span>
+              <h4>Lectura atenta de un fragmento</h4>
+              <p>Localizar qué sentimiento, conflicto o imagen destaca en un texto breve. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_bas_5" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+    </div>
+    <h3 class="section-sub">Nivel Intermedio (5 ejercicios prácticos · Respuesta Autónoma)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Intermedio · Ejercicio 1</span>
+              <h4>Relación entre tema recurrente y época</h4>
+              <p>Analizar cómo un mismo tema (por ejemplo, el destino o el poder) se aborda de forma distinta en dos épocas. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_int_1" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Intermedio · Ejercicio 2</span>
+              <h4>Connotación y sugerencia en literatura</h4>
+              <p>Explicar qué sugiere una expresión figurada más allá de su significado literal. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_int_2" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Intermedio · Ejercicio 3</span>
+              <h4>Transición entre etapas literarias</h4>
+              <p>Identificar señales de cambio cuando una corriente estética cede paso a otra. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_int_3" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Intermedio · Ejercicio 4</span>
+              <h4>Comparación de dos fragmentos breves</h4>
+              <p>Contrastar el tono y el tema de dos textos cortos de distintas etapas. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_int_4" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Intermedio · Ejercicio 5</span>
+              <h4>Conexión con la comunicación y mercadotecnia</h4>
+              <p>Observar cómo la narrativa y los símbolos literarios ayudan a entender el poder del relato (storytelling). Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_int_5" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+    </div>
+    <h3 class="section-sub">Nivel Avanzado (5 ejercicios prácticos · Respuesta Autónoma)</h3>
+    <div class="cards-grid">
+      
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Avanzado · Ejercicio 1</span>
+              <h4>Comentario sobre características de lo literario</h4>
+              <p>Explicar por qué un texto dado se reconoce como literario atendiendo a su lenguaje y propósito. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_adv_1" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Avanzado · Ejercicio 2</span>
+              <h4>Análisis de un tema recurrente en un pasaje</h4>
+              <p>Desarrollar cómo se manifiesta un tema recurrente y qué postura sugiere el texto. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_adv_2" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Avanzado · Ejercicio 3</span>
+              <h4>Esquema evolutivo de etapas</h4>
+              <p>Sintetizar las principales etapas literarias destacando un rasgo distintivo de cada una. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_adv_3" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Avanzado · Ejercicio 4</span>
+              <h4>Evaluación de lectura interpretativa</h4>
+              <p>Justificar por qué dos lectores pueden destacar distintos matices en un mismo poema o relato. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_adv_4" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+
+            <div class="card-ejercicio">
+              <span class="badge-nivel">Nivel Avanzado · Ejercicio 5</span>
+              <h4>Síntesis del tema 5</h4>
+              <p>Redactar un párrafo que integre características, temas recurrentes y etapas de la literatura. Responde y justifica de manera autónoma.</p>
+              <textarea id="ej_adv_5" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta y justificación autónoma..."></textarea>
+            </div>
+    </div>
+    </section>
+
+    <section id="g-reflexion" class="tab-panel">
+      <h3 class="section-sub">Preguntas de Reflexión Crítica (Respuesta Autónoma)</h3>
+      
+        <div class="card" style="margin-bottom:14px;">
+          <span class="badge-nivel">Reflexión Crítica #1</span>
+          <h3>¿Qué tema recurrente de la literatura (amor, destino, poder, libertad, búsqueda de identidad) te resulta más cercano y por qué?</h3>
+          <textarea id="ref_1" class="resp-area" rows="3" placeholder="Redacta aquí tu reflexión personal de forma autónoma..."></textarea>
+        </div>
+        <div class="card" style="margin-bottom:14px;">
+          <span class="badge-nivel">Reflexión Crítica #2</span>
+          <h3>¿Por qué leer literatura de distintas etapas amplía nuestra comprensión de las personas y de otras culturas?</h3>
+          <textarea id="ref_2" class="resp-area" rows="3" placeholder="Redacta aquí tu reflexión personal de forma autónoma..."></textarea>
+        </div>
+        <div class="card" style="margin-bottom:14px;">
+          <span class="badge-nivel">Reflexión Crítica #3</span>
+          <h3>¿Qué aprendiste al comparar el lenguaje literario con el lenguaje informativo o comercial?</h3>
+          <textarea id="ref_3" class="resp-area" rows="3" placeholder="Redacta aquí tu reflexión personal de forma autónoma..."></textarea>
+        </div>
+    </section>
+
+    <section id="g-evaluacion" class="tab-panel">
+      <h3 class="section-sub">Evaluación Formativa (Respuesta Autónoma)</h3>
+      
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 1</span>
+          <h4>Refuerzo conceptual 1</h4>
+          <p>Explica con tus palabras dos características esenciales del lenguaje o texto literario.</p>
+          <textarea id="ev_1" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 2</span>
+          <h4>Refuerzo conceptual 2</h4>
+          <p>Menciona tres temas recurrentes de la literatura y explica brevemente uno de ellos.</p>
+          <textarea id="ev_2" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 3</span>
+          <h4>Refuerzo conceptual 3</h4>
+          <p>¿Por qué es útil estudiar las etapas de la historia literaria?</p>
+          <textarea id="ev_3" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 4</span>
+          <h4>Aplicación básica</h4>
+          <p>Identifica el tema principal y una característica literaria en un fragmento breve.</p>
+          <textarea id="ev_4" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 5</span>
+          <h4>Aplicación intermedia</h4>
+          <p>Explica cómo puede variar el tratamiento de un mismo tema entre dos etapas literarias.</p>
+          <textarea id="ev_5" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+        <div class="card-ejercicio" style="margin-bottom:14px;">
+          <span class="badge-nivel">Evaluación Formativa · Ítem 6</span>
+          <h4>Aplicación avanzada</h4>
+          <p>Redacta un breve comentario literario integrando tema, rasgo estilístico y etapa o enfoque.</p>
+          <textarea id="ev_6" class="resp-area" rows="3" placeholder="Escribe aquí tu respuesta autónoma y sustento..."></textarea>
+        </div>
+    </section>
+
+    <footer class="footer-note">
+      <div><strong>Archivo de guía:</strong> guia_05_tema_05.html · <strong>Plan asociado:</strong> plan_05_tema_05.html · <strong>Sesión:</strong> 5/7</div>
+      <div>Colegio Montano · Comunicación · Quinto Bachillerato en Mercadotecnia · Unidad I (2027)</div>
+    </footer>
+  </div>
+
+  <script>
+    function openTab(evt, panelId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(panelId).classList.add('active');
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add('active');
+    }
+
+    function toggleFullScreen() {
+      const elem = document.getElementById('guiaRoot');
+      if (!document.fullscreenElement) {
+        if (elem.requestFullscreen) elem.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
